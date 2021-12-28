@@ -1,0 +1,58 @@
+.Navigation {
+    background-color: lightblue;
+    
+}
+
+ i {
+     font-size: 15px;
+ }
+
+.Navigation .content {
+    color: black;
+    font-size: 35px;
+    font-weight: 800;
+}
+.Navigation span {
+    color: #fff;
+    font-weight: 700;
+    margin: 0;
+}
+.Navigation .links {
+    color: black;
+    font-size: 19px;
+    font-weight: 700;
+    margin-left: 10px;
+    
+}
+.Navigation .farrightlinks {
+    color: black;
+    font-size: 19px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+/* //////MODAL///// */
+/* .modal {
+    background: linear-gradient(to right, lightblue, gray);
+} */
+
+.Form {
+    border: none;
+    width: 100%;
+     padding: 20px;
+    margin: 5px 0 5px 0; 
+    background: transparent;
+    
+}
+.row {
+    width: 50%;
+    margin: auto;
+}
+.title {
+    text-align: center;
+    color: blue;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+

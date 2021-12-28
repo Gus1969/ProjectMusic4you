@@ -1,0 +1,33 @@
+.login-title {
+    text-align: center;
+    margin-top: 50px;
+}
+.login-btn {
+    display: flex;
+    text-transform: uppercase;
+    font-size: 18px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 700;
+    padding: 8px 30px;
+    background: linear-gradient(to right, blue, lightblue);
+    box-shadow: rgba(0, 0,0.0, 0.3) 0px 18px 39px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    margin: 10px auto;
+    outline: none;
+    cursor: pointer;
+}
+@media screen and (max-width: 778px) {
+    .login-btn {
+        font-size: 14px;
+    border-radius: 15px;
+    padding: 8px 20px;
+
+    }
+
+}
+.form-group p {
+    color: red;
+    font-size: 19px;
+    margin-left: 20px;
+}

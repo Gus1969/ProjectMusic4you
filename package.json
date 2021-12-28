@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Gus1969/ProjectMusic4you/issues"
   },
-  "homepage": "https://github.com/Gus1969/ProjectMusic4you#readme"
+  "homepage": "https://github.com/Gus1969/ProjectMusic4you#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
 }
