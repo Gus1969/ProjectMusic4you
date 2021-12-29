@@ -20,7 +20,7 @@ color: red;
 const InputField = styled.input`
 width: 100%;
 padding: 0 40px 0 10px;
-line-height: 45px;
+line-height: 65px;
 border: 3px solid transparent;
 height: 45px;
 transition: .4s ease all;

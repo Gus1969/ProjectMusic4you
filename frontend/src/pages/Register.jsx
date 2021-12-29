@@ -138,9 +138,9 @@ const Register = () => {
             <div className="d-flex justify-content-center align-items-center">
           <button type="submit" className="btn btn-primary">Sign Up</button>
           </div>
-          <div className=" d-flex justify-content-flex-end">
+          {/* <div className=" d-flex justify-content-flex-end">
             Already have an account? Log in <a href="../pages/Login">here</a>
-          </div>
+          </div> */}
           
         
       </form>
