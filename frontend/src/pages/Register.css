@@ -5,7 +5,7 @@
 
   
 .wrapper {
-    margin-top: 100px;
+    margin-top: 60px;
     display: flex;
     justify-content: center;
 }
@@ -28,6 +28,13 @@
     outline: none;
     cursor: pointer;
 }
+
+.inputGroup {
+    position: relative;
+    z-index: 90;
+
+}
+
 @media screen and (max-width: 778px) {
     .btn {
         font-size: 14px;
@@ -36,10 +43,6 @@
 
     }
 
-}
-.form-group p {
-    color: red;
-    font-size: 17px;
 }
 
 
