@@ -81,7 +81,7 @@ const Register = () => {
           label="Username"
           placeholder="Your name"
           name="user"
-          wrong="Username must only contain 3 to 15 characters including numbers, letters, hyphen and underscore"
+          wrong="Username must contain 3 to 15 characters including numbers, letters, hyphen and underscore"
           expReg={RegularExpressions.user}
           />
           <Inputs
