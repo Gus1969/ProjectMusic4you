@@ -73,21 +73,18 @@ const SuccessMsg = styled.p `
 font-size: 14px;
 color:{Colores.success};
 text-align:center;
-margin: 10px 0 10px 0;
-color: green;
-padding: 5px 0 5px 0;
-background: green;
 color: white;
-display: none;
+background: green;
+
+
 
 `
 const Error = styled.p `
 font-size: 18px;
 text-align:center;
-margin: 10px 0 10px 0;
 color: white;
 background: #F66060;
-padding: 10px;
+
 word-spacing: 5px;
 
 

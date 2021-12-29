@@ -6,7 +6,7 @@ import {Wrong, Icono, Label, InputField } from '../iconos.js/RegisterStyles';
 
 
 
- const Inputs = ({ estado, setEstado, type, label, placeholder, name, wrong, expReg}) => {
+ const Inputs = ({ estado, setEstado, type, label, placeholder, name, wrong, expReg, funcion}) => {
      const handleChange = (e) => {
          //console.log(e.target.value)
         setEstado({...estado, campo: e.target.value})
@@ -20,6 +20,9 @@ import {Wrong, Icono, Label, InputField } from '../iconos.js/RegisterStyles';
                 setEstado({...estado, valido: 'false'})
              }
          }
+         if (funcion) {
+         funcion();
+        }
      }
      return (
 <div className="form-group p-3">
