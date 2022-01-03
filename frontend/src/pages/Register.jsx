@@ -53,7 +53,7 @@ const Register = () => {
     setPassword({ campo: '', valido: null})
     setConfirm({ campo: '', valido: null})
 
-    //conexion a database
+    //mongoose.connect('mongodb+srv://gustavo:gustavo2021@terceraentrega.lb0hj.mongodb.net/db_table?retryWrites=true&w=majority')
 
   } else {
     setValidForm(false);
