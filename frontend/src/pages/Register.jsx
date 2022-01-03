@@ -1,5 +1,5 @@
 
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import '../pages/Register.css'
 import NavFile from '../common/NavFile';
 import { Container} from 'react-bootstrap';
@@ -8,12 +8,13 @@ import {  Error, SuccessMsg} from '../iconos.js/RegisterStyles';
 import { faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
 import Footer from '../common/Footer';
 import Inputs from '../common/Inputs';
+ import axios from 'axios';
 //import { useSearchParams } from 'react-router-dom';
 
 
 
 const Register = () => {
-  const [user, setUser] = useState({ campo: "", valido:  null});
+  const [username, setUserName] = useState({ campo: "", valido:  null});
   const [name, setName] = useState({ campo: "", valido:  null});
   const [email, setEmail] = useState({ campo: "", valido:  null});
   const [password, setPassword] = useState({ campo: "", valido:  null});
@@ -44,21 +45,47 @@ const Register = () => {
   }
   const handleSubmit = (e)  => {
     e.preventDefault();
-    if(user.valido === 'true' && name.valido === 'true' && email.valido === 'true'&& password.valido === 'true'&& confirm.valido === 'true'){
+    if(username.valido === 'true' && name.valido === 'true' && email.valido === 'true'&& password.valido === 'true'&& confirm.valido === 'true'){
 
     setValidForm(true);
-    setUser({ campo: '', valido: null})
+    setUserName({ campo: '', valido: null})
     setName({ campo: '', valido: null})
     setEmail({ campo: '', valido: null})
     setPassword({ campo: '', valido: null})
     setConfirm({ campo: '', valido: null})
 
-    //mongoose.connect('mongodb+srv://gustavo:gustavo2021@terceraentrega.lb0hj.mongodb.net/db_table?retryWrites=true&w=majority')
+    
 
   } else {
     setValidForm(false);
   }
 }
+const {data} = async () => {
+  try {
+    await axios.post('./user', {username, name, email, password, confirm})
+   
+    
+  } catch (error) {
+    console.log(error)
+    
+  }
+  
+}
+localStorage.setItem("userInfo", JSON.stringify(data))
+const [profile, setProfile] = useState(null)
+useEffect(() => {
+  setTimeout(
+    () =>
+      setProfile({
+        username: 'Johnny',
+        name: 'John',
+        email: 'john@gmail.com',
+        password: '123456abc',
+        confirm : '123456abc'
+      }),
+    1050,
+  )
+}, [profile])
 
   return (
     
@@ -75,8 +102,8 @@ const Register = () => {
           </SuccessMsg>}
 
           <Inputs
-          estado ={user}
-          setEstado = {setUser}
+          estado ={username}
+          setEstado = {setUserName}
           type="text"
           label="Username"
           placeholder="Your name"
