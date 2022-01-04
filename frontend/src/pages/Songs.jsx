@@ -8,6 +8,7 @@ import "../pages/Songs.css";
 import InputSearch from "./InputSearch";
 
 const Songs = () => {
+  const token = localStorage.getItem('token');
 
 
   return (
@@ -31,7 +32,9 @@ const Songs = () => {
                 </Card.Text>
               </Card.Body>
               <Card.Footer>
+                {token && 
                 <audio className="audio" controls src={tema.ruta}></audio>
+              }
                 <h6 className="text-center">
                   Reproducciones:{tema.reproducciones}
                 </h6>

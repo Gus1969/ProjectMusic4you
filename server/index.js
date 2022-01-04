@@ -5,10 +5,13 @@ const users = require("./routes/users");
 const {notFound, errorHandler } = require("./middleware/error");
 //const { notFound, errorHandler } = require("./middleware/error");
 //const path = require("path");
+const cors = require('cors');
+
 
 dotenv.config();
 DB_CONNECT();
 const app = express();
+app.use(cors())
 
 app.use(express.json()); // to accept json data
 

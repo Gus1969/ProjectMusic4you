@@ -5,6 +5,7 @@ const createToken = require("../middleware/auth");
 
 
 const registerUsers = asyncHandler(async (req, res) => {
+  console.log(req.body)
   const { username, name, email, password, confirm } = req.body;
   
 
@@ -19,24 +20,21 @@ const registerUsers = asyncHandler(async (req, res) => {
     res.status(400)
     throw new Error("User already exists");
   } 
-    const user = User.create({
+    const user = await User.create({
       username,
       name,
       email,
       password,
       confirm,
+      
     });
-  
+   console.log(user, "mongo DB")
   if (user) {
-    res.status(201).json({
-      id: user.id,
-      username: user.username,
-      name: user.name,
-      email: user.email,
-      password: user.password,
-      confirm: user.confirm,
-      token: createToken(user.id)
-    });
+    console.log(user)
+    res.status(201).json({token: createToken(user.id), user: user});
+    
+      
+    
     
   } else  { 
     res.status(400)
@@ -45,6 +43,7 @@ const registerUsers = asyncHandler(async (req, res) => {
   }
 });
 const authUser = asyncHandler(async (req, res) => {
+  console.log(req.body)
     const { username, password } = req.body;
   
     const user = await User.findOne({ username });
@@ -64,32 +63,32 @@ const authUser = asyncHandler(async (req, res) => {
       throw new Error("Invalid Username or Password");
     }
   });
-// const updateUserProfile = asyncHandler(async (req, res) => {
-//     const user = await User.findById(req.user.id);
+const updateUserProfile = asyncHandler(async (req, res) => {
+    const user = await User.findById(req.user.id);
   
-//     if (user) {
-//         user.username = req.body.username || user.username;
-//       user.name = req.body.name || user.name;
-//       user.email = req.body.email || user.email;
-//       user.password = req.body.password || user.password;
-//       user.confirm = req.body.confirm || user.confirm
+    if (user) {
+        user.username = req.body.username || user.username;
+      user.name = req.body.name || user.name;
+      user.email = req.body.email || user.email;
+      user.password = req.body.password || user.password;
+      user.confirm = req.body.confirm || user.confirm
   
-//       const updatedUser = await user.save();
+      const updatedUser = await user.save();
   
-//       res.json({
-//         id: updatedUser.id,
-//         username: updatedUser.username,
-//         name: updatedUser.name,
-//         email: updatedUser.email,
-//         password: updatedUser.password,
-//         confirm: updatedUser.confirm,
-//         token: createToken(updatedUser.id),
-//       });
-//     } else {
-//       res.status(404);
-//       throw new Error("User Not Found");
-//     }
-//   });
+      res.json({
+        id: updatedUser.id,
+        username: updatedUser.username,
+        name: updatedUser.name,
+        email: updatedUser.email,
+        password: updatedUser.password,
+        confirm: updatedUser.confirm,
+        token: createToken(updatedUser.id),
+      });
+    } else {
+      res.status(404);
+      throw new Error("User Not Found");
+    }
+  });
   
-  module.exports = { authUser, registerUsers };
+  module.exports = { authUser, registerUsers, updateUserProfile };
 
