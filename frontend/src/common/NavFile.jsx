@@ -35,12 +35,11 @@ const NavFile = () => {
                 Home
               </Nav.Link>
               <Nav.Link as={Link} to={"../pages/Songs"}>
-                {" "}
                 Songs
               </Nav.Link>
             </Nav>
             <Nav className="farrightlinks">
-              {token ? <a  onClick={logOut}>
+              {token ? <a href="../pages/Home" className="logout" onClick={logOut}>
                 Logout
               </a> : 
               <>

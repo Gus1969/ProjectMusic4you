@@ -26,6 +26,13 @@
     }
 
 }
+.logout {
+    text-decoration: none;
+    color: black;
+    font-size: 19px;
+    font-weight: 700;
+    margin-left: 10px;
+}
 .form-group p {
     color: red;
     font-size: 19px;

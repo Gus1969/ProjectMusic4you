@@ -8,13 +8,14 @@ import "../pages/Songs.css";
 import InputSearch from "./InputSearch";
 
 const Songs = () => {
+  //const [searchSongs, setSearchSongs] = useState ('');
   const token = localStorage.getItem('token');
 
 
   return (
     <>
       <NavFile />
-      <InputSearch/>
+      <InputSearch />
       <div className="grid">
         {canciones.map((tema, i) => {
           return (
