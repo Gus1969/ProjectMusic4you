@@ -1,3 +1,56 @@
+
+
+
+
+# Project Music4you using reactjs, Node and Mongo.
+
+The project does also include the frontend library Bootstrap, fontawesome icons, styled-components to customize the styles in the Register page.
+
+Jquery has been also installed and used to filter the songs displayed in the songs page..
+
+When the user is not registered or logged in, the songs page displays the content of the artists *band name, song name and picture*, but the audio file will popup when the user logs in.
+
+# Back end
+
+Using MongoDB. The user fills out the register form, the data is saved to the database. The password is saved encrypted using Bcrypt..
+Upong logging in, using localStorage, the login form creates a token which ends up being used to successfully displays the audio files.
+When the user logs out, the token will dissapear, reason for which the audio tag is automatically removed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

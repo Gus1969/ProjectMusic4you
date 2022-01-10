@@ -1,4 +1,4 @@
-//import axios from 'axios'
+
 
 export const register = (user) => {
     const post = fetch("http://localhost:3003/user", {
