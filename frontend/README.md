@@ -16,6 +16,11 @@ Using MongoDB. The user fills out the register form, the data is saved to the da
 Upong logging in, using localStorage, the login form creates a token which ends up being used to successfully displays the audio files.
 When the user logs out, the token will dissapear, reason for which the audio tag is automatically removed.
 
+To successfully log in please use Gus24 as username with the password 4567
+or you may complete the sign up form.
+Note: Sometimes the server needs to be updated in the backend.
+
+
 
 
 

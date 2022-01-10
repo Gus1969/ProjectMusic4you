@@ -1,11 +1,12 @@
 
 
 export const register = (user) => {
-    const post = fetch("http://localhost:3003/user", {
+    const post = fetch("http://localhost:3001/user", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
         "Content-Type": "application/json",
+        
       },
     })
       .then((res) => res.json())
@@ -17,7 +18,7 @@ export const register = (user) => {
 
   export const siteLogin = (user) => {
       console.log(user)
-    const post = fetch("http://localhost:3003/user/login", {
+    const post = fetch("http://localhost:3001/user/login", {
         method: "POST",
         body: JSON.stringify(user),
         headers: {
