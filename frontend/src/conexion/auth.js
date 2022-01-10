@@ -1,7 +1,7 @@
 //import axios from 'axios'
 
 export const register = (user) => {
-    const post = fetch("http://localhost:3001/user", {
+    const post = fetch("http://localhost:3003/user", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
@@ -17,7 +17,7 @@ export const register = (user) => {
 
   export const siteLogin = (user) => {
       console.log(user)
-    const post = fetch("http://localhost:3001/user/login", {
+    const post = fetch("http://localhost:3003/user/login", {
         method: "POST",
         body: JSON.stringify(user),
         headers: {

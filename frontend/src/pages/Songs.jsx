@@ -7,6 +7,7 @@ import Footer from "../common/Footer";
 import "../pages/Songs.css";
 import InputSearch from "./InputSearch";
 
+
 const Songs = () => {
   //const [searchSongs, setSearchSongs] = useState ('');
   const token = localStorage.getItem('token');
@@ -16,7 +17,7 @@ const Songs = () => {
     <>
       <NavFile />
       <InputSearch />
-      <div className="grid">
+      <div className="grid" id="grid">
         {canciones.map((tema, i) => {
           return (
             <Card className="card" key={i}>
